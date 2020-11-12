@@ -1,4 +1,4 @@
-import 'package:eatee/views/core/styles.dart';
+import 'package:eatee/ui/core/styles.dart';
 import 'package:flutter/material.dart';
 
 class AppConfig {

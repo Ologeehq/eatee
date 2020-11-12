@@ -1,7 +1,8 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:eatee/views/core/app_config.dart';
-import 'package:eatee/views/core/styles.dart';
-import 'package:eatee/views/routers/route.gr.dart';
+import 'package:eatee/ui/core/app_config.dart';
+import 'package:eatee/ui/core/styles.dart';
+import 'package:eatee/ui/routers/route.gr.dart';
+
 import 'package:flutter/material.dart';
 
 class AppBaseWidget extends StatelessWidget {
