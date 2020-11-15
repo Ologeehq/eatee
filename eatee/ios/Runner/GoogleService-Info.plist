@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>885798273546-b9cn6ll9thlq5so34ig95g97tup54ebr.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.885798273546-b9cn6ll9thlq5so34ig95g97tup54ebr</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAoXUOnG5S1maMrtaYMfiaLWhYw7Y_ISuw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>885798273546</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>ng.ohstel.eatee</string>
+	<key>PROJECT_ID</key>
+	<string>eatee-app</string>
+	<key>STORAGE_BUCKET</key>
+	<string>eatee-app.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:885798273546:ios:b9469d7c29a26ebebb15f3</string>
+	<key>DATABASE_URL</key>
+	<string>https://eatee-app.firebaseio.com</string>
+</dict>
+</plist>

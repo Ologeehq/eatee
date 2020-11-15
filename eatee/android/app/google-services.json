@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "885798273546",
+    "firebase_url": "https://eatee-app.firebaseio.com",
+    "project_id": "eatee-app",
+    "storage_bucket": "eatee-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:885798273546:android:9e53a03a38d81e44bb15f3",
+        "android_client_info": {
+          "package_name": "ng.ohstel.eatee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "885798273546-lpuve6eai34757of4uf1iegoo1p2hucr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjeIvbiML4Sf413NH-C50YUpgK1olAjkw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "885798273546-lpuve6eai34757of4uf1iegoo1p2hucr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
