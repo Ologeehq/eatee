@@ -29,7 +29,10 @@ class AppBaseWidget extends StatelessWidget {
             backgroundColor: kPrimaryColor,
           ),
           inputDecorationTheme: InputDecorationTheme(
+            fillColor: Color(0xffEBF1EF),
+            filled: true,
             border: OutlineInputBorder(
+              borderSide: BorderSide.none,
               borderRadius: BorderRadius.circular(8),
             ),
           ),

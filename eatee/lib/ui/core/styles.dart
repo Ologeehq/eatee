@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 //app theme color
-const kPrimaryColor = Color(0xFFF27507);
+const kPrimaryColor = Colors.deepOrange;
 const kSecondaryColor = Color(0xFF1F2430);
 const kButtonInactiveColor = Color(0xFFD6D9DF);
 const kButtonTextColor = Color(0xFFFFFFFF);
@@ -81,3 +81,8 @@ const kBodyText4 = TextStyle(
     fontStyle: FontStyle.normal,
     fontWeight: FontWeight.w400,
     color: kPrimaryTextColor);
+
+final outlineBorder = OutlineInputBorder(
+  borderRadius: BorderRadius.circular(8),
+  borderSide: BorderSide(color: kSecondaryColor, width: 2),
+);
