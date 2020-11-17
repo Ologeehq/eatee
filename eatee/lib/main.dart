@@ -1,3 +1,4 @@
+import 'package:eatee/locator.dart';
 import 'package:eatee/ui/core/app_base_widget.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -10,5 +11,6 @@ void main() async {
   ));
 
   await Firebase.initializeApp();
+  setUp();
   runApp(AppBaseWidget());
 }
