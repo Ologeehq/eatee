@@ -22,8 +22,9 @@ class AppBaseWidget extends StatelessWidget {
         builder: ExtendedNavigator.builder<AutoRouter>(router: AutoRouter()),
         theme: ThemeData.light().copyWith(
           primaryColor: kPrimaryColor,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
           accentColor: kSecondaryColor,
-          backgroundColor: kPrimaryColor,
+          backgroundColor: Colors.white,
           scaffoldBackgroundColor: Colors.white,
           floatingActionButtonTheme: FloatingActionButtonThemeData(
             backgroundColor: kPrimaryColor,

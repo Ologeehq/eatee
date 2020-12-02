@@ -5,6 +5,7 @@ const kPrimaryColor = Colors.deepOrange;
 const kSecondaryColor = Color(0xFF1F2430);
 const kButtonInactiveColor = Color(0xFFD6D9DF);
 const kButtonTextColor = Color(0xFFFFFFFF);
+const kGreyColor = Color(0xFFFAFAFA);
 // status color
 const kSuccessColor = Color(0xFF8DEC15);
 const kFailureColor = Color(0xFFF90B0B);

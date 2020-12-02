@@ -1,6 +1,6 @@
 import 'package:eatee/ui/core/styles.dart';
 import 'package:eatee/ui/routers/route.gr.dart';
-import 'package:eatee/ui/widgets/intro/button_solid.dart';
+import 'package:eatee/ui/views/intro/widget/button_solid.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
 
