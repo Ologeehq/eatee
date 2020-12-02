@@ -1,12 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:eatee/core/providers/signin_provider.dart';
-import 'package:eatee/core/services/connectivity.dart';
 import 'package:eatee/ui/core/app_config.dart';
 import 'package:eatee/ui/core/footer_text.dart';
 import 'package:eatee/ui/core/styles.dart';
 import 'package:eatee/ui/routers/route.gr.dart';
 import 'package:eatee/ui/views/base_view.dart';
-import 'package:eatee/ui/widgets/intro/button_solid.dart';
+import 'package:eatee/ui/views/intro/widget/button_solid.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -20,6 +19,7 @@ class _LoginScreenState extends State<LoginScreen> {
     final height = AppConfig.getHeight(context);
     return BaseView<SigninProvider>(
       builder: (context, provider, child) => Scaffold(
+        key: provider.scaffoldKey,
         appBar: AppBar(
           backgroundColor: Colors.white,
           iconTheme: IconThemeData(color: Colors.black87),
@@ -86,27 +86,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       title: 'Sign In',
                       bgColor: kPrimaryColor,
                       height: 55,
-                      onPressed: () {
+                      onPressed: () async {
                         if (provider.formKey.currentState.validate()) {
                           provider.formKey.currentState.save();
-                          ConnectivityService.isConnectedToInternet().then(
-                            (value) {
-                              if (value != null) {
-                                if (value.isNotEmpty &&
-                                    value[0].rawAddress.isNotEmpty) {
-                                  print('connected');
-                                } else {
-                                  print('check your internet connectivity');
-                                }
-                              } else {
-                                print('check your internet connectivity');
-                              }
-                            },
-                          ).catchError(
-                            (err) => print(err),
-                          );
-                        } else {
-                          print('invalid form fields');
+                          await provider.loginUser(context);
                         }
                       },
                     ),

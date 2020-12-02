@@ -4,8 +4,9 @@ import 'package:eatee/ui/core/app_title.dart';
 import 'package:eatee/ui/core/styles.dart';
 import 'package:eatee/ui/routers/route.gr.dart';
 import 'package:eatee/ui/views/base_view.dart';
-import 'package:eatee/ui/widgets/intro/button_solid.dart';
-import 'package:eatee/ui/widgets/intro/control_button.dart';
+import 'package:eatee/ui/views/intro/widget/button_solid.dart';
+import 'package:eatee/ui/views/intro/widget/control_button.dart';
+
 import 'package:flutter/material.dart';
 
 class IntroScreen extends StatefulWidget {

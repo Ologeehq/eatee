@@ -1,4 +1,4 @@
-import 'package:eatee/ui/widgets/intro/indicator.dart';
+import 'package:eatee/ui/views/intro/widget/indicator.dart';
 import 'package:flutter/material.dart';
 
 Widget controlButtons(int _slideIndex) {

@@ -6,7 +6,7 @@ import 'package:eatee/ui/core/footer_text.dart';
 import 'package:eatee/ui/core/styles.dart';
 import 'package:eatee/ui/routers/route.gr.dart';
 import 'package:eatee/ui/views/base_view.dart';
-import 'package:eatee/ui/widgets/intro/button_solid.dart';
+import 'package:eatee/ui/views/intro/widget/button_solid.dart';
 import 'package:flutter/material.dart';
 
 class SignupScreen extends StatelessWidget {
@@ -15,6 +15,7 @@ class SignupScreen extends StatelessWidget {
     final height = AppConfig.getHeight(context);
     return BaseView<SignupProvider>(
       builder: (context, provider, child) => Scaffold(
+        key: provider.scaffoldKey,
         appBar: AppBar(
           backgroundColor: Colors.white,
           iconTheme: IconThemeData(color: Colors.black87),
@@ -157,15 +158,10 @@ class SignupScreen extends StatelessWidget {
                       title: 'Create Account',
                       bgColor: kPrimaryColor,
                       height: 55,
-                      onPressed: () {
+                      onPressed: () async {
                         if (provider.formKey.currentState.validate()) {
                           provider.formKey.currentState.save();
-                          print(provider.email);
-                          print(provider.fullname);
-                          print(provider.phone);
-                          print(provider.password);
-                        } else {
-                          print('invalid form fields');
+                          await provider.createAccount(context);
                         }
                       },
                     ),
@@ -176,7 +172,8 @@ class SignupScreen extends StatelessWidget {
                     textAction: 'Sign in',
                     onTap: () => ExtendedNavigator.of(context)
                         .popAndPush(Routes.loginScreen),
-                  )
+                  ),
+                  SizedBox(height: height * .03),
                 ],
               ),
             ),
