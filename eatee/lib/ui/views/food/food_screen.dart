@@ -13,6 +13,8 @@ import 'package:flutter/material.dart';
 import 'widgets/restaurant_card.dart';
 
 class FoodScreen extends StatelessWidget {
+  final Key key;
+  FoodScreen({this.key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final height = AppConfig.getHeight(context);
@@ -25,15 +27,10 @@ class FoodScreen extends StatelessWidget {
         print('disposed');
       },
       onProviderReady: (provider) {
-        FoodService()
-            .createRestaurant("Item 7", "07014235169", "Tank")
-            .then((value) {
-          value.fold((l) => print(l), (r) => print(r));
-        });
         provider.controller = PageController(
             initialPage: provider.currentIndex, viewportFraction: 0.9);
-        provider.timer = Timer.periodic(Duration(milliseconds: 1500), (t) {
-          provider.increaseIndex(3);
+        provider.timer = Timer.periodic(Duration(seconds: 2), (t) {
+          provider.increaseIndex(provider.foodSliderImages.length);
           provider.controller.animateToPage(provider.currentIndex,
               duration: Duration(milliseconds: 250), curve: Curves.easeIn);
         });
@@ -46,7 +43,6 @@ class FoodScreen extends StatelessWidget {
           children: [
             SearchContainer(width: width),
             Container(
-              //height: 140,
               width: double.infinity,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -57,55 +53,27 @@ class FoodScreen extends StatelessWidget {
                     child: PageView(
                       controller: provider.controller,
                       children: [
-                        Container(
-                          margin: EdgeInsets.all(5.0),
-                          height: double.infinity,
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage('assets/images/food1.png'),
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.all(5.0),
-                          height: double.infinity,
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage('assets/images/food1.png'),
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                        Container(
-                          margin: EdgeInsets.all(5.0),
-                          height: double.infinity,
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage('assets/images/food1.png'),
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
+                        imageSliderCard(provider.foodSliderImages[0]),
+                        imageSliderCard(provider.foodSliderImages[1]),
+                        imageSliderCard(provider.foodSliderImages[2]),
                       ],
                     ),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Indicator(
-                        active: provider.currentIndex == 0 ? true : false,
-                      ),
-                      Indicator(
-                        active: provider.currentIndex == 1 ? true : false,
-                      ),
-                      Indicator(
-                        active: provider.currentIndex == 2 ? true : false,
-                      ),
-                    ],
+                    children: provider.foodSliderImages
+                        .map(
+                          (e) => Indicator(
+                            active: (provider.currentIndex <
+                                            provider.foodSliderImages.length
+                                        ? provider.currentIndex
+                                        : provider.currentIndex - 1) ==
+                                    provider.foodSliderImages.indexOf(e)
+                                ? true
+                                : false,
+                          ),
+                        )
+                        .toList(),
                   )
                 ],
               ),
@@ -126,6 +94,20 @@ class FoodScreen extends StatelessWidget {
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Container imageSliderCard(String imageUrl) {
+    return Container(
+      margin: EdgeInsets.all(5.0),
+      height: double.infinity,
+      width: double.infinity,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(imageUrl ?? 'assets/images/food1.png'),
+          fit: BoxFit.cover,
         ),
       ),
     );

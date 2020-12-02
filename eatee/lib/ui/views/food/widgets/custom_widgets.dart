@@ -23,7 +23,7 @@ Row titlePriceCard(BuildContext context) {
 }
 
 RawMaterialButton customButtom(
-    {Function onTap, String title, IconData icon, Color bgColor}) {
+    {Function onTap, String title, IconData icon, Color bgColor,bool showIcon=false}) {
   return RawMaterialButton(
     onPressed: onTap,
     child: Container(
@@ -44,6 +44,7 @@ RawMaterialButton customButtom(
               style: kButtonTextStyle,
             ),
           ),
+        if(showIcon)
           Icon(
             icon ?? Icons.shopping_cart_outlined,
             color: kButtonTextColor,
